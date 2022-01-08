@@ -1,46 +1,12 @@
-import random
-from .models.player import Player
-from .models.property import Property
+from .utils.helper import dice
+from .utils.helper import player_queue
+from .utils.helper import create_board
+from .utils.helper import create_players
+from .utils.helper import max_rounds_rule
+
 
 def game():
     print('#TODO')
-
-def dice():
-    return random.randrange(1,6)
-
-def player_queue(players):
-    
-    while players is not []:
-        queue = []
-
-        chosen = random.choice(players)
-
-        queue.append(chosen)
-        players.remove(chosen)    
-
-def create_players():
-    list_players = []
-
-    for x in range(0,3):
-        list_players.append(Player('Player'+x, x))
-
-    return list_players
-
-def create_board():
-    list_properties = []
-
-    for x in range(0,20):
-        if x == 0:
-            list_properties.append(Property(0,0,100))
-        else:
-            list_properties.append(Property(10+x,10+x))
-
-    return list_properties
-
-def max_rounds_rule():
-    max_rounds = 1000
-
-    return max_rounds
 
 
 if __name__ == "__main__":

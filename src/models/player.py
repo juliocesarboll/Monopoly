@@ -2,6 +2,7 @@ class Player:
     name = None
     money = None
     behavior = None
+    position = None
     list_property = None
 
 
@@ -16,5 +17,5 @@ class Player:
             self.behavior = 'Cauteloso'
         elif behavior == 3:
             self.behavior = 'Aleatorio'
-            
         self.list_property = []
+        self.position = 0

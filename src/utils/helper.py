@@ -3,11 +3,14 @@ from ..models.property import Player
 from ..models.property import Property
 
 def dice():
+    ''' Dice Roll Method '''
+
     return random.randrange(1,6)
 
 
 def player_queue(players):
-    
+    ''' Randomizing Player Queue Method'''
+
     while players is not []:
         queue = []
 
@@ -18,6 +21,8 @@ def player_queue(players):
 
 
 def create_players():
+    ''' Creating Players Method '''
+
     list_players = []
 
     for x in range(0,3):
@@ -27,6 +32,8 @@ def create_players():
 
 
 def create_board():
+    ''' Creating Board Method '''
+
     list_properties = []
 
     for x in range(0,20):
@@ -39,6 +46,8 @@ def create_board():
 
 
 def max_rounds_rule():
+    ''' Rule of Rounds Method '''
+
     max_rounds = 1000
 
     return max_rounds

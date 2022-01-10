@@ -1,9 +1,10 @@
 import random
-from .utils.helper import dice
-from .utils.helper import player_queue
-from .utils.helper import create_board
-from .utils.helper import create_players
-from .utils.helper import max_rounds_rule
+from utils.helper import dice
+from utils.helper import player_queue
+from utils.helper import player_queue
+from utils.helper import create_board
+from utils.helper import create_players
+from utils.helper import max_rounds_rule
 
 
 def game():
@@ -18,8 +19,6 @@ def game():
 
     # Create Loop with Rounds and Win Rule
     for round in range(1, max_rounds_rule()):
-        
-
         # Create Win condition
         if len(players_list) == 1:
             break

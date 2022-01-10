@@ -1,6 +1,6 @@
 import random
-from ..models.property import Player
-from ..models.property import Property
+from models.player import Player
+from models.property import Property
 
 def dice():
     ''' Dice Roll Method '''
@@ -11,13 +11,14 @@ def dice():
 def player_queue(players):
     ''' Randomizing Player Queue Method'''
 
-    while players is not []:
-        queue = []
+    queue = []
+    while len(players):
 
         chosen = random.choice(players)
-
         queue.append(chosen)
-        players.remove(chosen)    
+        players.remove(chosen)
+
+    return queue
 
 
 def create_players():
@@ -25,8 +26,9 @@ def create_players():
 
     list_players = []
 
-    for x in range(0,3):
-        list_players.append(Player('Player'+x, x))
+    for x in range(0,4):
+        name = f'Player {x}'
+        list_players.append(Player(name, x))
 
     return list_players
 

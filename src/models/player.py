@@ -5,7 +5,6 @@ class Player:
     money = None
     behavior = None
     position = None
-    list_property = None
 
 
     def __init__(self, name, behavior):
@@ -21,5 +20,4 @@ class Player:
             self.behavior = 'Cauteloso'
         elif behavior == 3:
             self.behavior = 'Aleatorio'
-        self.list_property = []
         self.position = 0

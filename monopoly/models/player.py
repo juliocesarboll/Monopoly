@@ -13,14 +13,15 @@ class Player:
 
         self.name = name
         self.money = money
-        if behavior == 0:
-            self.behavior = 'Compulsivo'
-        elif behavior == 1:
-            self.behavior = 'Exigente'
-        elif behavior == 2:
-            self.behavior = 'Cauteloso'
-        elif behavior == 3:
-            self.behavior = 'Aleatorio'
+        match behavior:
+            case 0:
+                self.behavior = 'Impulsivo'
+            case 1:
+                self.behavior = 'Exigente'
+            case 2:
+                self.behavior = 'Cauteloso'
+            case 3:
+                self.behavior = 'Aleatorio'
         self.position = 0
 
     def __repr__(self):

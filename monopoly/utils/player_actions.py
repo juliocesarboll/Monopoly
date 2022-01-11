@@ -49,9 +49,9 @@ def buy(player, property):
 
         # Player randomly buy or not
         case 'Aleatorio':
-            dice_throw = random.randrange(0,1)
+            decision = random.randrange(0,1)
             
-            if dice_throw == 1:
+            if decision == 1:
                 if player.money >= property.sell_value:
                     player.money -= property.sell_value
                     property.player_hold = player

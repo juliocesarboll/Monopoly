@@ -9,14 +9,14 @@ def movement(player, dice_roll, properties_list):
         player.position = 0
         
         # Bonus Money logic
-        player.money = bonus_money(player, properties_list)
+        bonus_money(player, properties_list[0])
 
     elif final_position > 21:
         relative_position = final_position - 21
         player.position = relative_position
 
         # Bonus Money logic
-        player.money = bonus_money(player, properties_list)
+        bonus_money(player, properties_list[0])
 
     else:
         player.position = final_position
@@ -24,6 +24,10 @@ def movement(player, dice_roll, properties_list):
 
 def buy(player, property):
     ''' Buy Action '''
+    print(f"[BUY] PLAYER NAME - %s" % (player.name))
+    print(f"[BUY] PLAYER BEHAVIOR - %s" % (player.behavior))
+    print(f"[BUY] PLAYER MONEY - %s" % (player.money))
+    print(f"[BUY] PROPERTY SELL - %s" % (property.sell_value))
 
     match player.behavior:
         
@@ -58,6 +62,10 @@ def buy(player, property):
 def rent(player, property):
     ''' Rent Action '''
 
+    print(f"[RENT] PLAYER NAME - %s" % (player.name))
+    print(f"[RENT] PLAYER BEHAVIOR - %s" % (player.behavior))
+    print(f"[RENT] PLAYER MONEY - %s" % (player.money))
+    print(f"[RENT] PROPERTY SELL - %s" % (property.sell_value))
     after_rent = player.money - property.rent_value
  
     if after_rent < 0:
@@ -79,6 +87,9 @@ def rent(player, property):
 
 def bankrupt(player, properties_list):
     ''' Bankrupt Action '''
+    print(f"[BANKRUPT] PLAYER NAME - %s" % (player.name))
+    print(f"[BANKRUPT] PLAYER BEHAVIOR - %s" % (player.behavior))
+    print(f"[BANKRUPT] PLAYER MONEY - %s" % (player.money))
 
     is_bankrupt = False
 
@@ -94,7 +105,8 @@ def bankrupt(player, properties_list):
     return is_bankrupt
 
 
-def bonus_money(player, properties_list):
+def bonus_money(player, property):
     ''' Add Bonus Money to the Player '''
 
-    player.money += properties_list[0].bonus_value
+    print(f"[BONUS] PLAYER MONEY - %s" % (player.money))
+    player.money += property.bonus_value

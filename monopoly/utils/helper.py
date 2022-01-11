@@ -28,7 +28,7 @@ def create_players():
 
     for x in range(0,4):
         name = f'Player {x}'
-        list_players.append(Player(name, x))
+        list_players.append(Player(name, 300, x))
 
     return list_players
 
@@ -38,9 +38,9 @@ def create_board():
 
     list_properties = []
 
-    for x in range(0,20):
+    for x in range(0,21):
         if x == 0:
-            list_properties.append(Property(0,0,100))
+            list_properties.append(Property(None,None,100))
         else:
             list_properties.append(Property(10+x,10+x))
 

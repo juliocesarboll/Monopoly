@@ -28,7 +28,7 @@ def buy(player, property):
     match player.behavior:
         
         # Always buy
-        case 'Compulsivo':
+        case 'Impulsivo':
             if player.money >= property.sell_value:
                 player.money -= property.sell_value
                 property.player_hold = player

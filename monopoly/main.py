@@ -3,8 +3,7 @@ from game import game as MonopolyGame
 # Auxiliar method to do Percentage
 def percentage(upper, behavior):
     quotient = upper / 300
-
-    return {'behavior': behavior, 'number': quotient * 100}
+    return {'behavior': behavior, 'number': round(quotient * 100)}
      
 
 if __name__ == "__main__":
@@ -27,26 +26,25 @@ if __name__ == "__main__":
         result_list.append(game)
 
     # Interacting over Simulation
-    for result in result_list:
-        for obj in result:
+    for obj in result_list:
 
-            # Counting Behavior Winner
-            match obj['player_behavior']:
-                case 0:
-                    impulsive_behavior += 1
-                case 1:
-                    demanding_behavior += 1
-                case 2:
-                    cautious_behavior += 1
-                case 3:
-                    random_behavior += 1
+        # Counting Behavior Winner
+        match obj['behavior']:
+            case 'Impulsivo':
+                impulsive_behavior += 1
+            case 'Exigente':
+                demanding_behavior += 1
+            case 'Cauteloso':
+                cautious_behavior += 1
+            case 'Aleatorio':
+                random_behavior += 1
 
-            # Sum of Rounds
-            sum_rounds += obj['rounds']
-            
-            # Counting Timeouts
-            if obj['timeout']:
-                timeout_counter += 1
+        # Sum of Rounds
+        sum_rounds += obj['rounds']
+        
+        # Counting Timeouts
+        if obj['timeout']:
+            timeout_counter += 1
     
     #Calculating Average Rounds WITH ROUND
     average_rounds = sum_rounds / 300

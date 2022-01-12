@@ -54,23 +54,16 @@ def game():
                 # Removing Player from the Player List
                 players_list.remove(player)
 
+    # Verifing with has more than one player
+    richiest_player = players_list[0]
+    if len(players_list) > 1:
+        
+        # Choosing the Richiest
+        for player in players_list:
+            if richiest_player.money < player.money:
+                richiest_player = player
+
     # Return values of the Game
-    ret_list = []
-    for player in players_list:
-        match player.behavior:
-            case 'Impulsivo':
-                ret['player_behavior'] = 0           
-            case 'Exigente':
-                ret['player_behavior'] = 1
-            case 'Cauteloso':
-                ret['player_behavior'] = 2
-            case 'Aleatorio':
-                ret['player_behavior'] = 3
+    ret_obj = {'behavior': richiest_player.behavior, 'rounds': round, 'timeout': True if round >= max_rounds_rule() else False}
 
-        ret['rounds'] = round
-        if round >= max_rounds_rule(): 
-            ret['timeout'] = True
-
-        ret_list.append(ret)
-
-    return ret_list
+    return ret_obj

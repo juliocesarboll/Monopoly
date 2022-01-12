@@ -42,7 +42,7 @@ def create_board():
         if x == 0:
             list_properties.append(Property(None,None,100))
         else:
-            list_properties.append(Property(20+(2 * x),10+x))
+            list_properties.append(Property(150+(2 * x),50 + x))
 
     return list_properties
 
